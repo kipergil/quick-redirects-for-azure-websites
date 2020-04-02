@@ -12,5 +12,5 @@ Check QuickRedirectMiddleware.cs for edit links.
 |---------|-----------------------|-------------------------------------------------------------------------------------------------|---|
 | /dev    | Vs Online Editor      | https://{websiteName}.scm.azurewebsites.net/dev                                                 |   |
 | /kudu   | Azure Kudu            | https://{websiteName}.scm.azurewebsites.net/                                                    |   |
-| /portal | Azure Portal Web apps | https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites |   |
+| /portal | Azure Portal Web apps | https://portal.azure.com/ |   |
 |         |                       |                                                                                                 |   |
