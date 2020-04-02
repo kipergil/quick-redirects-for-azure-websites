@@ -1,6 +1,12 @@
 # quick-redirects-for-azure-websites
-A very quick url redirect manager for Azure WebApps directly called from your application url.
-Check quick-redirects-for-azure-websites region inside Startup.cs
+This is a simple middleware example which helps developers to open frequently used links 
+just by typing the path at the end of their application.
+
+Since we are working with Azure Websites, I added VS Online Editor, Kudu and Portal paths.
+You can add/amend as many urls as you wish and define your endpoints and urls. 
+
+Check Startup.cs for usage.
+Check QuickRedirectMiddleware.cs for edit links.
 
 | Url     | Opens                 | Redirect To                                                                                     |   |
 |---------|-----------------------|-------------------------------------------------------------------------------------------------|---|
