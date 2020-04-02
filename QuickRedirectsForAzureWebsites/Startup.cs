@@ -37,30 +37,9 @@ namespace QuickRedirectsForAzureWebsites
                 endpoints.MapRazorPages();
             });
 
-            #region quick-redirects-for-azure-websites
 
-            app.Run(async (context) =>
-            {
-                //read the website from env. variable which is automatically available when app is deployed on azure.
-
-                var websiteName = Environment.GetEnvironmentVariable("WEBSITE_SITE_NAME");
-
-                //define your routes and urls here. actually you can add as many urls as you wish.
-                Dictionary<string, string> urls = new Dictionary<string, string>();
-                urls.Add("dev", $"https://{websiteName}.scm.azurewebsites.net/dev");
-                urls.Add("kudu", $"https://{websiteName}.scm.azurewebsites.net");
-                urls.Add("portal", $"https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Web%2Fsites");
-
-                //last part of the url will be used to find the redirect url
-                var path = context.Request.Path.Value.Split('/').LastOrDefault().ToLower();
-
-                if (urls.ContainsKey(path))
-                {
-                    context.Response.Redirect(urls[path]);
-                }
-            });
-            #endregion
-
+            //call quick redirect middleware
+            app.UseQuickRedirectsMiddleware();
         }
     }
 }
